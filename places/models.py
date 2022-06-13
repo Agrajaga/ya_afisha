@@ -13,5 +13,9 @@ class Place(models.Model):
 
 
 class PlaceImage(models.Model):
-    link = models.CharField(max_length=500)
+    image = models.ImageField(blank=True, null=True)
+    index = models.PositiveSmallIntegerField(unique=True, null=True)
     place = models.ForeignKey('Place', on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f'{self.index} {self.place.title}'
