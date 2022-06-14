@@ -15,7 +15,10 @@ class Place(models.Model):
 class PlaceImage(models.Model):
     image = models.ImageField(blank=True, null=True)
     index = models.PositiveSmallIntegerField(unique=True, null=True)
-    place = models.ForeignKey('Place', on_delete=models.CASCADE)
+    place = models.ForeignKey(
+        'Place', 
+        on_delete=models.CASCADE, 
+        related_name='imgs')
 
     def __str__(self) -> str:
         return f'{self.index} {self.place.title}'
