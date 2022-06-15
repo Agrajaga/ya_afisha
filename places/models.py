@@ -14,11 +14,19 @@ class Place(models.Model):
 
 class PlaceImage(models.Model):
     image = models.ImageField(blank=True, null=True)
-    index = models.PositiveSmallIntegerField(unique=True, null=True)
+    index = models.PositiveSmallIntegerField(
+        null=False,
+        blank=False,
+        default=0,
+        db_index=True
+    )
     place = models.ForeignKey(
-        'Place', 
-        on_delete=models.CASCADE, 
+        'Place',
+        on_delete=models.CASCADE,
         related_name='imgs')
 
     def __str__(self) -> str:
         return f'{self.index} {self.place.title}'
+
+    class Meta:
+        ordering = ['index']
