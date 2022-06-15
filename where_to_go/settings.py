@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'places.apps.PlacesConfig',
     'adminsortable2',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,8 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "advlist,autolink,lists,link,image,charmap,preview,anchor,searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,",# plugins
+    "height": 500, #texteditor height
+}
