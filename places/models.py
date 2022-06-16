@@ -14,8 +14,8 @@ class Place(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Место'
-        verbose_name_plural = 'Места'
+        verbose_name = 'Локация'
+        verbose_name_plural = 'Локации'
 
 
 
