@@ -27,7 +27,7 @@
 
 ### Административное добавление локаций
 
-Для администратора, имеющего доступ к консоли сервера, существует консольная команда для добавления локаций из json-файлов. Например:
+Для администратора, имеющего доступ к консоли сервера, существует консольная команда `load_place` для добавления локаций из json-файлов. Например:
 ```
 python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/Антикафе%20Bizone.json
 ```
@@ -59,12 +59,12 @@ python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-t
 pip install -r requirements.txt
 ```
 2. Создайте файл `.env`. В нем будут расположены параметры фреймворка:
-    - Обязательный параметр
+    - ___Обязательные параметры___
         - `SECRET_KEY = 'secret_key'`  
         требуется для формирования криптографических подписей. [Подробнее в документации.](https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-SECRET_KEY)
         - `DATABASE_URL = sqlite:////home/user/project/db.sqlite3`   
         URL строки подключения к базе данных. [Подробнее в документации.](https://django-environ.readthedocs.io/en/latest/types.html#environ-env-db-url)
-    - Необязательные параметры (_в примере указаны значения по-умолчанию_)
+    - ___Необязательные параметры___ (_в примере указаны значения по-умолчанию_)
         - `DEBUG = False`  
         отвечает за включение режима отладки. [Подробнее в документации.](https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-DEBUG)
         - `ALLOWED_HOSTS = 'localhost', '127.0.0.1'`  
