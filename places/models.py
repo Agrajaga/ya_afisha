@@ -21,7 +21,7 @@ class Place(models.Model):
 
 
 class PlaceImage(models.Model):
-    image = models.ImageField(blank=True, null=True, verbose_name='Картинка')
+    image = models.ImageField(verbose_name='Картинка')
     index = models.PositiveSmallIntegerField(
         null=False,
         blank=False,
