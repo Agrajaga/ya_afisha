@@ -23,8 +23,6 @@ class Place(models.Model):
 class PlaceImage(models.Model):
     image = models.ImageField(verbose_name='Картинка')
     index = models.PositiveSmallIntegerField(
-        null=False,
-        blank=False,
         default=0,
         db_index=True
     )
