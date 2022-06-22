@@ -23,10 +23,12 @@ class Command(BaseCommand):
 
             place, is_created = Place.objects.get_or_create(
                 title=location['title'],
-                description_short=location['description_short'],
-                description_long=location['description_long'],
                 coord_lng=location['coordinates']['lng'],
                 coord_lat=location['coordinates']['lat'],
+                defaults={
+                    'description_short': location['description_short'],
+                    'description_long': location['description_long'],
+                }
             )
             if not is_created:
                 place.imgs.all().delete()
